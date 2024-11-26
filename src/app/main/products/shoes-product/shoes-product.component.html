@@ -1,0 +1,6 @@
+<button mat-button (click)="openDialog()">Launch dialog</button>
+<app-table
+  [gridDataList]="gridDataList"
+  [gridDataColumn]="dataGridColumn"
+  (changePagination)="getPagination($event)"
+></app-table>

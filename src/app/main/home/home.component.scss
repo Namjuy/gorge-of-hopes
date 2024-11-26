@@ -1,0 +1,13 @@
+.hero-section {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: space-between; /* Khoảng cách giữa các thẻ */
+  .card {
+    text-align: center; /* Căn giữa nội dung */
+    height: 900px;
+    img {
+      max-height: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của thẻ */
+      height: auto; /* Giữ tỷ lệ khung hình */
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<div class="table-container container">
+  <table class="table table-striped table-hover border">
+    <thead>
+      <tr>
+        <th *ngFor="let item of gridDataColumn">{{ item.HeaderTitle }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dataItem of gridDataList">
+        <ng-container *ngFor="let listItem of gridDataColumn">
+          <td>
+            <ng-container *ngIf="listItem.Object; else simpleField">
+              <!-- Nếu là object -->
+              <div *ngFor="let key of getValue(dataItem, listItem.Field)">
+                {{ key.key }}: {{ key.value }}
+              </div>
+            </ng-container>
+            <ng-template #simpleField>
+              <!-- Nếu là field đơn giản -->
+              <ng-container *ngIf="getValue(dataItem, listItem.Field) as value">
+                <ng-container *ngIf="value; else noData">
+                  {{ value }}
+                </ng-container>
+                <ng-template #noData>No data</ng-template>
+              </ng-container>
+            </ng-template>
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+  <app-pagination (changePagination)="getPagination($event)"></app-pagination>
+</div>

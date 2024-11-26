@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{ data.Title }}</h2>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+  <ng-template
+    cdkPortalOutlet
+    [cdkPortalOutlet]="componentPortal"
+  ></ng-template>
+</mat-dialog-content>

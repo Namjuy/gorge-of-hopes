@@ -1,0 +1,31 @@
+<mat-form-field class="example-full-width">
+  <mat-label>Options</mat-label>
+
+  <ng-container *ngIf="isReactive; else templateDriven">
+    <input
+      matInput
+      [formControl]="control"
+      [matAutocomplete]="auto"
+      (blur)="onTouched()"
+    />
+  </ng-container>
+
+  <ng-template #templateDriven>
+    <input
+      matInput
+      [(ngModel)]="innerValue"
+      (ngModelChange)="onChange($event)"
+      [matAutocomplete]="auto"
+      (blur)="onTouched()"
+    />
+  </ng-template>
+
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option
+      *ngFor="let option of filteredOptions | async"
+      [value]="option.name"
+    >
+      {{ option.name }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
