@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Pagination } from '../../../shared/pagination/model/pagination.model';
-import { DataGrid } from '../../../shared/table/model/data-grid.model';
+
 import { MatDialog } from '@angular/material/dialog';
-import { PopupComponent } from '../../../shared/popup/popup.component';
+import { PopupComponent } from '../../../shared/component/popup/popup.component';
 import { LoginComponent } from '../../login/login.component';
+import { DataGrid } from '../../../shared/component/table/table/table.model';
+import { Pagination } from '../../../shared/component/pagination/model/pagination.model';
 
 @Component({
   selector: 'app-shoes-product',

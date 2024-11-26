@@ -1,2 +1,77 @@
-<p>Helloo form dang ky</p>
-duy đẹp trai
+<form [formGroup]="loginForm" class="login-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Tên đăng nhập</mat-label>
+    <input matInput formControlName="username" placeholder="Ex. johndoe" />
+    <mat-error *ngIf="control('username')?.hasError('required')">
+      Tên đăng nhập là <strong>bắt buộc</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Mật khẩu</mat-label>
+    <input
+      matInput
+      type="password"
+      formControlName="password"
+      placeholder="Ví dụ: ********"
+    />
+
+    <mat-error *ngIf="control('password')?.hasError('required')">
+      Mật khẩu là <strong>bắt buộc</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Số điện thoại</mat-label>
+    <input
+      matInput
+      type="tel"
+      formControlName="phoneNumber"
+      placeholder="Ví dụ: 0123456789"
+    />
+    <mat-error *ngIf="control('phoneNumber')?.hasError('required')">
+      Số điện thoại là <strong>bắt buộc</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Địa chỉ email</mat-label>
+    <input
+      matInput
+      type="email"
+      formControlName="email"
+      placeholder="Ex. pat@example.com"
+    />
+    <mat-error
+      *ngIf="
+        control('email')?.hasError('email') &&
+        !control('email')?.hasError('required')
+      "
+    >
+      Vui lòng nhập địa chỉ email
+    </mat-error>
+    <mat-error *ngIf="control('email')?.hasError('required')">
+      Địa chỉ email là <strong>bắt buộc</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>CCCD</mat-label>
+    <input matInput formControlName="cccd" placeholder="Ví dụ: 123456789012" />
+    <mat-error *ngIf="control('cccd')?.hasError('pattern')">
+      Vui lòng nhập số CCCD hợp lệ
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Địa chỉ</mat-label>
+    <input
+      matInput
+      formControlName="address"
+      placeholder="Ex. 123 Street, City"
+    />
+  </mat-form-field>
+
+  <button mat-raised-button type="submit" [disabled]="loginForm.invalid">
+    Submit
+  </button>
+</form>

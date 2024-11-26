@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LanguagePickerComponent } from './language-picker/language-picker.component';
-import { BottomSheetOptionComponent } from './bottom-sheet-option/bottom-sheet-option.component';
-import { TableComponent } from './table/table.component';
-import { PaginationComponent } from './pagination/pagination.component';
-import { PopupComponent } from './popup/popup.component';
-import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
+
+import { BottomSheetOptionComponent } from './component/bottom-sheet-option/bottom-sheet-option.component';
+
+import { PopupComponent } from './component/popup/popup.component';
+import { AutoCompleteComponent } from './component/auto-complete/auto-complete.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { PortalModule } from '@angular/cdk/portal';
+import { LanguagePickerComponent } from './component/language-picker/language-picker.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { PaginationComponent } from './component/pagination/pagination.component';
+import { TableComponent } from './component/table/table/table.component';
 
 // Import the Material Module
 
@@ -19,9 +22,9 @@ import { MaterialModule } from './material.module';
     LanguagePickerComponent,
     BottomSheetOptionComponent,
     TableComponent,
-    PaginationComponent,
     PopupComponent,
     AutoCompleteComponent,
+    PaginationComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +32,7 @@ import { MaterialModule } from './material.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule, // Use MaterialModule here
+    PortalModule,
   ],
   exports: [
     NavbarComponent,

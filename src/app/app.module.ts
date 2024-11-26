@@ -7,20 +7,21 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { LoginComponent } from './main/login/login.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { ProductModule } from './main/products/product.module';
 import { HomeComponent } from './main/home/home.component';
 import { PortalModule } from '@angular/cdk/portal';
+import { MainModule } from './main/main.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    ProductModule,
+    MainModule,
     PortalModule,
+    CommonModule,
   ],
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],
