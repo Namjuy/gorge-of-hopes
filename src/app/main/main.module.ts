@@ -5,9 +5,14 @@ import { MaterialModule } from '../shared/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+import { CatergoryComponent } from './catergory/catergory.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, CheckoutComponent, UserProfileComponent, OrderHistoryComponent, CatergoryComponent, AdminComponent],
   imports: [
     ProductModule,
     MaterialModule,

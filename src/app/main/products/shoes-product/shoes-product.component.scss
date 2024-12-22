@@ -1,64 +1,143 @@
-/* Tổng quan về form */
-.login-form {
-  width: 100%;
+.container {
+  max-width: 900px;
   margin: 0 auto;
-  .login-info {
-    width: fit-content;
+  padding: 2rem 1rem;
+
+  .card {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-text {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .input-group {
+        max-width: 120px;
+        margin-right: 1rem;
+
+        .btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5rem;
+        }
+
+        .form-control {
+          text-align: center;
+        }
+      }
+
+      .btn-danger {
+        margin-left: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .order-summary {
+    .card {
+      .card-body {
+        .card-title {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .card-text {
+          font-size: 1.25rem;
+          margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+          width: 100%;
+          padding: 0.75rem;
+          font-size: 1rem;
+        }
+      }
+    }
   }
 }
 
-/* Các trường mat-form-field */
-mat-form-field {
-  margin-bottom: 15px;
-  .example-full-width {
-    width: 100%;
-  }
-  .mat-label {
-    color: #4f4f4f;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
   }
 
-  .mat-input-element {
-    font-size: 16px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+  .card-body {
+    flex-direction: column;
+
+    .input-group {
+      max-width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .btn-danger {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
   }
 
-  .mat-error {
-    color: #d32f2f;
-    font-size: 14px;
-  }
-}
+  .order-summary .card-body {
+    .card-title {
+      font-size: 1.25rem;
+    }
 
-/* Nút submit */
-button.submit-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    .card-text {
+      font-size: 1rem;
+    }
 
-  &:disabled {
-    background-color: #d1d1d1;
-    cursor: not-allowed;
-  }
-
-  &:hover:not(:disabled) {
-    background-color: #0056b3;
+    .btn-primary {
+      padding: 0.5rem;
+      font-size: 0.875rem;
+    }
   }
 }
 
-/* Các hiệu ứng chung */
-input,
-textarea,
-select {
-  font-size: 16px;
-}
+@media (max-width: 576px) {
+  .container {
+    padding: 0.5rem;
+  }
 
-/* Các lỗi nhập liệu */
-mat-error {
-  font-size: 12px;
+  .card-body {
+    flex-direction: column;
+
+    .input-group {
+      max-width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .btn-danger {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+  }
+
+  .order-summary .card-body {
+    .card-title {
+      font-size: 1rem;
+    }
+
+    .card-text {
+      font-size: 0.875rem;
+    }
+
+    .btn-primary {
+      padding: 0.5rem;
+      font-size: 0.75rem;
+    }
+  }
 }

@@ -14,11 +14,34 @@
 </section>
 
 <section class="feature-section">
-  <h2>Features</h2>
-  <div class="features">
-    <div class="feature-card">Feature 1</div>
-    <div class="feature-card">Feature 2</div>
-    <div class="feature-card">Feature 3</div>
+  <h2 class="text-center mb-4">Featured Products</h2>
+  <div class="row">
+    <div class="col-md-3 mb-4" *ngFor="let feature of features">
+      <div class="card feature-card">
+        <div class="card-image-container">
+          <img
+            src="{{ feature.image1 }}"
+            class="image image1"
+            alt="{{ feature.name }}"
+          />
+          <img
+            src="{{ feature.image2 }}"
+            class="image image2"
+            alt="{{ feature.name }}"
+          />
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ feature.name }}</h5>
+          <p class="card-text">{{ feature.description }}</p>
+          <p class="card-text">
+            <small class="text-muted">Price: ${{ feature.price }}</small>
+          </p>
+          <a [routerLink]="['/products', feature.id]" class="btn btn-primary"
+            >View Details</a
+          >
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
