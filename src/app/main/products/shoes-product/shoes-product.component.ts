@@ -184,7 +184,7 @@ export class ShoesProductComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(PopupComponent, {
-      height: '500px',
+      height: 'fit-content',
       width: '700px',
       data: {
         Component: LoginComponent,

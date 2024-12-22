@@ -17,6 +17,7 @@ import { map, Observable, startWith } from 'rxjs';
 export class AutoCompleteComponent implements OnInit {
   @Input() options: { id: number; name: string }[] = [];
   @Input() isReactive: boolean = false;
+  @Input() placeholder: string = '';
   control: FormControl = new FormControl();
   filteredOptions!: Observable<{ id: number; name: string }[]>;
 

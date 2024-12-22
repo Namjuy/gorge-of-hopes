@@ -1,0 +1,64 @@
+/* Tổng quan về form */
+.login-form {
+  width: 100%;
+  margin: 0 auto;
+  .login-info {
+    width: fit-content;
+  }
+}
+
+/* Các trường mat-form-field */
+mat-form-field {
+  margin-bottom: 15px;
+  .example-full-width {
+    width: 100%;
+  }
+  .mat-label {
+    color: #4f4f4f;
+  }
+
+  .mat-input-element {
+    font-size: 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .mat-error {
+    color: #d32f2f;
+    font-size: 14px;
+  }
+}
+
+/* Nút submit */
+button.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:disabled {
+    background-color: #d1d1d1;
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+}
+
+/* Các hiệu ứng chung */
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
+/* Các lỗi nhập liệu */
+mat-error {
+  font-size: 12px;
+}

@@ -1,0 +1,179 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Register</h2>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                class="form-control"
+                formControlName="firstName"
+                placeholder="Enter your first name"
+              />
+              <div
+                *ngIf="
+                  control('firstName')?.invalid && control('firstName')?.touched
+                "
+                class="text-danger"
+              >
+                First name is required
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                class="form-control"
+                formControlName="lastName"
+                placeholder="Enter your last name"
+              />
+              <div
+                *ngIf="
+                  control('lastName')?.invalid && control('lastName')?.touched
+                "
+                class="text-danger"
+              >
+                Last name is required
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                formControlName="email"
+                placeholder="Enter your email"
+              />
+              <div
+                *ngIf="
+                  control('email')?.hasError('email') &&
+                  !control('email')?.hasError('required')
+                "
+                class="text-danger"
+              >
+                Please enter a valid email address
+              </div>
+              <div
+                *ngIf="control('email')?.hasError('required')"
+                class="text-danger"
+              >
+                Email is <strong>required</strong>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="cccd" class="form-label">CCCD</label>
+              <input
+                type="text"
+                id="cccd"
+                class="form-control"
+                formControlName="cccd"
+                maxlength="12"
+                placeholder="E.g., 123456789012"
+              />
+              <div
+                *ngIf="control('cccd')?.hasError('pattern')"
+                class="text-danger"
+              >
+                Please enter a valid CCCD number
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="phoneNumber" class="form-label">Phone Number</label>
+              <div class="input-group">
+                <span class="input-group-text">+084</span>
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  class="form-control"
+                  formControlName="phoneNumber"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+              <div
+                *ngIf="control('phoneNumber')?.hasError('pattern')"
+                class="text-danger"
+              >
+                Please enter a valid phone number
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                formControlName="password"
+                placeholder="Enter your password"
+              />
+              <div
+                *ngIf="
+                  control('password')?.invalid && control('password')?.touched
+                "
+                class="text-danger"
+              >
+                Password is required and must be at least 6 characters long
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                id="confirmPassword"
+                class="form-control"
+                formControlName="confirmPassword"
+                placeholder="Confirm your password"
+              />
+              <div
+                *ngIf="
+                  control('confirmPassword')?.invalid &&
+                  control('confirmPassword')?.touched
+                "
+                class="text-danger"
+              >
+                Passwords must match
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              [disabled]="registerForm.invalid"
+            >
+              Register
+            </button>
+          </form>
+
+          <div class="text-center my-3">
+            <span>or</span>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button class="btn btn-outline-primary" (click)="loginWithGoogle()">
+              <i class="bi bi-google"></i> Login with Google
+            </button>
+            <button
+              class="btn btn-outline-primary"
+              (click)="loginWithFacebook()"
+            >
+              <i class="bi bi-facebook"></i> Login with Facebook
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

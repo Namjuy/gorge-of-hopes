@@ -26,4 +26,7 @@ export class PopupComponent implements OnInit {
       this.componentPortal = new ComponentPortal(this.data.Component);
     }
   }
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
 }

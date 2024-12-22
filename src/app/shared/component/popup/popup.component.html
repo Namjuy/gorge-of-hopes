@@ -1,4 +1,9 @@
-<h2 mat-dialog-title>{{ data.Title }}</h2>
+<div class="dialog-header">
+  <h2 mat-dialog-title>{{ data.Title }}</h2>
+  <div class="close-button" (click)="closeDialog()">
+    <i class="fas fa-times"></i>
+  </div>
+</div>
 <mat-divider></mat-divider>
 <mat-dialog-content>
   <ng-template
