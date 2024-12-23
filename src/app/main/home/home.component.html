@@ -18,17 +18,19 @@
   <div class="row">
     <div class="col-md-3 mb-4" *ngFor="let feature of features">
       <div class="card feature-card">
-        <div class="card-image-container">
-          <img
-            src="{{ feature.image1 }}"
-            class="image image1"
-            alt="{{ feature.name }}"
-          />
-          <img
-            src="{{ feature.image2 }}"
-            class="image image2"
-            alt="{{ feature.name }}"
-          />
+        <div class="image-slider">
+          <div class="image-container">
+            <img
+              src="{{ feature.image1 }}"
+              class="image image1"
+              alt="{{ feature.name }}"
+            />
+            <img
+              src="{{ feature.image2 }}"
+              class="image image2"
+              alt="{{ feature.name }}"
+            />
+          </div>
         </div>
         <div class="card-body text-center">
           <h5 class="card-title">{{ feature.name }}</h5>

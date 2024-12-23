@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
-import { LoginComponent } from '../../../main/login/login.component';
-import { RegisterComponent } from '../../../main/register/register.component';
+import { LoginComponent } from '../../../main/authentication/login/login.component';
+import { RegisterComponent } from '../../../main/authentication/register/register.component';
 
 @Component({
   selector: 'app-navbar',

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatErrorStateMatcher } from '../../shared/interface/MatErrorStateMatcher';
 
 @Component({
   selector: 'app-register',
